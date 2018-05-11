@@ -9,11 +9,16 @@ import com.fundata.varena.fundatajavasdk.domain.http.Json;
 import com.fundata.varena.fundatajavasdk.domain.http.RequsetConfig;
 
 /**
+ * http客户端操作
  * @author baoyl
  * @created 2018/5/9
  */
 public interface HttpClientOperation {
 
+    /**
+     * 获取httpclient
+     * @return
+     */
     public HttpClient getClient();
 
     /**

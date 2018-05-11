@@ -7,6 +7,7 @@ import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
@@ -149,6 +150,10 @@ public class HttpClientTemplate implements HttpClientOperation {
 
     private FunDataResult parseResult(HttpResponse response) throws Exception {
         String result = response.getEntity() == null ? null : EntityUtils.toString(response.getEntity(), "UTF-8");
-        return new Gson().fromJson(result, FunDataResult.class);
+        int statusCode = response.getStatusLine().getStatusCode();
+        if (statusCode >= HttpStatus.SC_OK && statusCode <= HttpStatus.SC_MULTI_STATUS) {
+            return new Gson().fromJson(result, FunDataResult.class);
+        }
+        return new FunDataResult(statusCode, "request error");
     }
 }

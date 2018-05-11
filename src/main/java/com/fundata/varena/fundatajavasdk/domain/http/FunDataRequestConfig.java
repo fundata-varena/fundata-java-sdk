@@ -6,6 +6,7 @@ import org.apache.http.HttpRequest;
 import com.fundata.varena.fundatajavasdk.utils.FunDataUtils;
 
 /**
+ * fundata dota2接口请求配置
  * @author baoyl
  * @created 2018/5/9
  */

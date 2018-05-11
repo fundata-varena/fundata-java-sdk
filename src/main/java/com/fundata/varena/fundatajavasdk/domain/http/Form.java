@@ -16,6 +16,7 @@ import org.apache.http.message.BasicNameValuePair;
 import com.fundata.varena.fundatajavasdk.domain.BaseBean;
 
 /**
+ * http 表单
  * @author baoyl
  * @created 2018/5/9
  */

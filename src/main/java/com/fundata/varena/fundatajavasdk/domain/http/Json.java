@@ -12,6 +12,7 @@ import com.fundata.varena.fundatajavasdk.domain.BaseBean;
 import com.google.gson.Gson;
 
 /**
+ * http Json
  * @author baoyl
  * @created 2018/5/9
  */

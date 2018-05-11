@@ -3,6 +3,7 @@ package com.fundata.varena.fundatajavasdk.domain.entity;
 import com.fundata.varena.fundatajavasdk.domain.BaseBean;
 
 /**
+ * fundata dota2请求结果实体
  * @author baoyl
  * @created 2018/5/9
  */
@@ -15,7 +16,7 @@ public class FunDataResult extends BaseBean {
 
     public FunDataResult(){}
 
-    private FunDataResult(Integer retcode, String message) {
+    public FunDataResult(Integer retcode, String message) {
         this.retcode = retcode;
         this.message = message;
     }

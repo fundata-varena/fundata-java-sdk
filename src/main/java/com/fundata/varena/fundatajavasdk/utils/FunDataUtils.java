@@ -1,27 +1,24 @@
 package com.fundata.varena.fundatajavasdk.utils;
 
-import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 import org.apache.commons.lang3.StringUtils;
 
-import sun.misc.BASE64Encoder;
-
 /**
+ * fundata dota2 工具类
  * @author baoyl
  * @created 2018/5/9
  */
 public class FunDataUtils {
 
-    private static String codes = "zxcvbnmlkjhgfdsaqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+    private final static String CODES = "zxcvbnmlkjhgfdsaqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
 
     public static String randomCode(int length) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         SecureRandom sr = new SecureRandom();
         for (int i = 0; i < length; i++) {
-            sb.append(codes.charAt(sr.nextInt(codes.length())));
+            sb.append(CODES.charAt(sr.nextInt(CODES.length())));
         }
         return sb.toString();
     }
