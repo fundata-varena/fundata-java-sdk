@@ -148,12 +148,7 @@ public class HttpClientTemplate implements HttpClientOperation {
     }
 
     private FunDataResult parseResult(HttpResponse response) throws Exception {
-        //TODO
         String result = response.getEntity() == null ? null : EntityUtils.toString(response.getEntity(), "UTF-8");
-        int statusCode = response.getStatusLine().getStatusCode();
-        System.out.println(result);
-//        if (statusCode >= HttpStatus.SC_OK && statusCode <= HttpStatus.SC_MULTI_STATUS) {
-            return new Gson().fromJson(result, FunDataResult.class);
-//        }
+        return new Gson().fromJson(result, FunDataResult.class);
     }
 }
