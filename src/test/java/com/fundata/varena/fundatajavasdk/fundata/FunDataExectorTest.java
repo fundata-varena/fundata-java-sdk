@@ -125,4 +125,116 @@ public class FunDataExectorTest {
         System.out.println(funDataResult.getData());
     }
 
+    @Test
+    public void getProHeroFactions() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProHeroFactions(2, 0, 1, 1);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProHeroLanes() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProHeroLanes(2, 0, 1, 1);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProHeroOverview() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProHeroOverview(2, 0, 1, 1);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProHeroPriority() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProHeroPriority(2, 0, 1, 1);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProHeroRoles() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProHeroRoles(2, 0, 1, 1);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProPlayerHeroInfo() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProPlayerHeroInfo(1111);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProPlayerStats() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProPlayerStats(1111);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProTeamHeroInfo() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProTeamHeroInfo(5);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProTeamMatchStats() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProTeamMatchStats(5);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProTeamVsStats() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProTeamVsStats(5, 2);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProTeamWinRate() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProTeamWinRate(5);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProLeagueList() throws ClientException {
+        //TODO fix
+        FunDataResult funDataResult = funDataExector.getProLeagueList(1, 1);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getProLeagueBaseInfo() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getProLeagueBaseInfo(9601);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
+    }
+
+    @Test
+    public void getTiRankPlayer() {
+    }
+
+    @Test
+    public void getTiRankTeam() {
+    }
 }
