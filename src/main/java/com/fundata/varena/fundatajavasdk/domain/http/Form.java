@@ -129,6 +129,6 @@ public class Form extends BaseBean implements Iterable<BasicNameValuePair> {
         for (BasicNameValuePair param : params) {
             merges.add(param.getName() + "=" + param.getValue());
         }
-        return StringUtils.join("&", merges);
+        return StringUtils.join(merges, "&");
     }
 }

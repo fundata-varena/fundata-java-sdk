@@ -215,7 +215,6 @@ public class FunDataExectorTest {
 
     @Test
     public void getProLeagueList() throws ClientException {
-        //TODO fix
         FunDataResult funDataResult = funDataExector.getProLeagueList(1, 1);
         System.out.println(funDataResult.getRetcode());
         System.out.println(funDataResult.getMessage());
@@ -231,10 +230,18 @@ public class FunDataExectorTest {
     }
 
     @Test
-    public void getTiRankPlayer() {
+    public void getTiRankPlayer() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getTiRankPlayer(1, 10);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
     }
 
     @Test
-    public void getTiRankTeam() {
+    public void getTiRankTeam() throws ClientException {
+        FunDataResult funDataResult = funDataExector.getTiRankTeam(0, 10);
+        System.out.println(funDataResult.getRetcode());
+        System.out.println(funDataResult.getMessage());
+        System.out.println(funDataResult.getData());
     }
 }

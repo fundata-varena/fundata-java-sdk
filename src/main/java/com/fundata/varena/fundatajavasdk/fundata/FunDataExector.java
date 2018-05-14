@@ -383,6 +383,6 @@ public class FunDataExector {
      * @throws ClientException
      */
     public FunDataResult getTiRankTeam(int page, int limit) throws ClientException {
-        return this.clientOperation.get("int page, int limit", makePageLimit(page, limit));
+        return this.clientOperation.get("/pro/league/ti/rank-team", makePageLimit(page, limit));
     }
 }

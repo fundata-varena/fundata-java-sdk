@@ -1,8 +1,9 @@
-package com.fundata.varena.fundatajavasdk.domain.http;
+package com.fundata.varena.fundatajavasdk.fundata;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpRequest;
 
+import com.fundata.varena.fundatajavasdk.domain.http.RequsetConfig;
 import com.fundata.varena.fundatajavasdk.utils.FunDataUtils;
 
 /**

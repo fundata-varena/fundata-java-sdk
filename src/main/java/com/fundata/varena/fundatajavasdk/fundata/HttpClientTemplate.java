@@ -24,7 +24,6 @@ import com.fundata.varena.fundatajavasdk.domain.entity.FunDataResult;
 import com.fundata.varena.fundatajavasdk.domain.exception.ClientException;
 import com.fundata.varena.fundatajavasdk.domain.http.EntityEnclosingGet;
 import com.fundata.varena.fundatajavasdk.domain.http.Form;
-import com.fundata.varena.fundatajavasdk.domain.http.FunDataRequestConfig;
 import com.fundata.varena.fundatajavasdk.domain.http.Json;
 import com.fundata.varena.fundatajavasdk.domain.http.RequsetConfig;
 import com.google.gson.Gson;
@@ -83,7 +82,7 @@ public class HttpClientTemplate implements HttpClientOperation {
         } else {
             get = new HttpGet(buildURI(url, form));
         }
-        return execute(get, json, form, config);
+        return execute(get, json, null, config);
     }
 
     public FunDataResult post(String url, Form form) throws ClientException {
