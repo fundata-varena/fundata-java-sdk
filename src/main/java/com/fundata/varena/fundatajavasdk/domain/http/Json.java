@@ -26,6 +26,7 @@ public class Json extends BaseBean implements Iterable<Object> {
         Collections.addAll(this.params, params);
     }
 
+    @Override
     public Iterator<Object> iterator() {
         return params.iterator();
     }
@@ -110,6 +111,7 @@ public class Json extends BaseBean implements Iterable<Object> {
 
     public String merge() {
         //TODO
+
         return null;
     }
 }
