@@ -39,7 +39,7 @@ public class FunDataUtils {
         try {
             MessageDigest md5 = MessageDigest.getInstance("MD5");
             byte[] md5bytes = md5.digest(code.getBytes("utf-8"));
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             for (byte b : md5bytes) {
                 String temp = Integer.toHexString(b & 0xff);
                 if (temp.length() == 1) {

@@ -40,6 +40,8 @@ public class HttpClientTemplate implements HttpClientOperation {
     private HttpHost host;
     private String rootPath;
 
+    private static final String URL_START = "/";
+
     HttpClientTemplate(String host, String rootPath, String key, String secret) {
         this.key = key;
         this.secret = secret;
@@ -48,33 +50,39 @@ public class HttpClientTemplate implements HttpClientOperation {
         this.host = new HttpHost(host);
     }
 
+    @Override
     public HttpClient getClient() {
         return client;
     }
 
+    @Override
     public FunDataResult get(String url) throws ClientException {
         return get(url, (Json) null);
     }
 
+    @Override
     public FunDataResult get(String url, Form form) throws ClientException {
         return get(url, form, new FunDataRequestConfig(key, secret, rootPath + url, form == null ? null : form.merge()));
     }
 
+    @Override
     public FunDataResult get(String url, Json json) throws ClientException {
         return get(url, json, new FunDataRequestConfig(key, secret, rootPath + url, json == null ? null : json.merge()));
     }
 
+    @Override
     public FunDataResult get(String url, Form form, RequsetConfig config) throws ClientException {
-        return get(url, (Json) null, form, config);
+        return get(url, null, form, config);
     }
 
+    @Override
     public FunDataResult get(String url, Json json, RequsetConfig config) throws ClientException {
-        return get(url, json, (Form) null, config);
+        return get(url, json, null, config);
     }
 
     public FunDataResult get(String url, Json json, Form form, RequsetConfig config) throws ClientException {
         url = handleUrl(url);
-        HttpRequest get = null;
+        HttpRequest get;
         if (json != null) {
             get = new EntityEnclosingGet(url);
         } else if (form == null || form.isEmpty()) {
@@ -85,20 +93,24 @@ public class HttpClientTemplate implements HttpClientOperation {
         return execute(get, json, null, config);
     }
 
+    @Override
     public FunDataResult post(String url, Form form) throws ClientException {
         return post(url, form, new FunDataRequestConfig(key, secret, rootPath + url, form == null ? null : form.merge()));
     }
 
+    @Override
     public FunDataResult post(String url, Json json) throws ClientException {
         return post(url, json, new FunDataRequestConfig(key, secret, rootPath + url, json == null ? null : json.merge()));
     }
 
+    @Override
     public FunDataResult post(String url, Form form, RequsetConfig config) throws ClientException {
-        return post(url, (Json) null, form, config);
+        return post(url, null, form, config);
     }
 
+    @Override
     public FunDataResult post(String url, Json json, RequsetConfig config) throws ClientException {
-        return post(url, json, (Form) null, config);
+        return post(url, json, null, config);
     }
 
     public FunDataResult post(String url, Json json, Form form, RequsetConfig config) throws ClientException {
@@ -109,7 +121,7 @@ public class HttpClientTemplate implements HttpClientOperation {
     private String handleUrl(String url) {
         if (StringUtils.isBlank(url)) {
             url = "";
-        } else if (!url.startsWith("/")) {
+        } else if (!url.startsWith(URL_START)) {
             url = "/" + url;
         }
         return host + rootPath + url;
@@ -153,6 +165,6 @@ public class HttpClientTemplate implements HttpClientOperation {
         if (statusCode >= HttpStatus.SC_OK && statusCode <= HttpStatus.SC_MULTI_STATUS) {
             return new Gson().fromJson(result, FunDataResult.class);
         }
-        return new FunDataResult(statusCode, "request error");
+        return FunDataResult.of(statusCode, "request error");
     }
 }

@@ -24,6 +24,7 @@ public class FunDataRequestConfig implements RequsetConfig {
         this.params = params;
     }
 
+    @Override
     public void config(HttpRequest request) {
         String nonce = FunDataUtils.randomCode(FunDataUtils.randomLength(5, 10));
         String time = FunDataUtils.getCurrentTime();

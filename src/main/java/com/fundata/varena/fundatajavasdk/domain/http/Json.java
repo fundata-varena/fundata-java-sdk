@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.fundata.varena.fundatajavasdk.domain.BaseBean;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 
 /**
@@ -19,8 +21,8 @@ import com.google.gson.Gson;
 public class Json extends BaseBean implements Iterable<Object> {
     private static final long serialVersionUID = 2792821093049194375L;
 
-    public static final String CONTENT_TYPE = "application/json";
-    private List<Object> params = new ArrayList<Object>();
+    private static final String CONTENT_TYPE = "application/json";
+    private List<Object> params = Lists.newArrayList();
 
     public Json(Object... params) {
         Collections.addAll(this.params, params);
@@ -62,7 +64,7 @@ public class Json extends BaseBean implements Iterable<Object> {
     }
 
     public Json add(String key, Object value) {
-        Map<String, Object> param = new HashMap<String, Object>();
+        Map<String, Object> param = Maps.newHashMap();
         param.put(key, value);
         return add(param);
     }

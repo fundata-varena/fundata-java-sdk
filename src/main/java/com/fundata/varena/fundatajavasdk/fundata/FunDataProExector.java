@@ -1,7 +1,5 @@
 package com.fundata.varena.fundatajavasdk.fundata;
 
-import java.util.Calendar;
-
 import com.fundata.varena.fundatajavasdk.domain.entity.FunDataResult;
 import com.fundata.varena.fundatajavasdk.domain.exception.ClientException;
 import com.fundata.varena.fundatajavasdk.domain.http.Form;
@@ -17,11 +15,11 @@ public class FunDataProExector extends FunDataExector {
         super(key, secret, "/data-service/dota2");
     }
 
-    private Json makeProJson(int period, int region, int lowQuality, int highQuality) {
-        return new Json().add("period", period)
-                .put("region", region)
-                .put("low_quality", lowQuality)
-                .put("high_quality", highQuality);
+    private Form makeProParam(int period, int region, int lowQuality, int highQuality) {
+        return new Form().add("period", period)
+                .add("region", region)
+                .add("low_quality", lowQuality)
+                .add("high_quality", highQuality);
     }
 
     /**
@@ -99,7 +97,7 @@ public class FunDataProExector extends FunDataExector {
      * @throws ClientException
      */
     public FunDataResult getProHeroOverview(int period, int region, int lowQuality, int highQuality) throws ClientException {
-        return this.clientOperation.get("/pro/hero/overview", makeProJson(period, region, lowQuality, highQuality));
+        return this.clientOperation.get("/pro/hero/overview", makeProParam(period, region, lowQuality, highQuality));
     }
 
     /**
@@ -112,7 +110,7 @@ public class FunDataProExector extends FunDataExector {
      * @throws ClientException
      */
     public FunDataResult getProHeroFactions(int period, int region, int lowQuality, int highQuality) throws ClientException {
-        return this.clientOperation.get("/pro/hero/factions", makeProJson(period, region, lowQuality, highQuality));
+        return this.clientOperation.get("/pro/hero/factions", makeProParam(period, region, lowQuality, highQuality));
     }
 
 
@@ -126,7 +124,7 @@ public class FunDataProExector extends FunDataExector {
      * @throws ClientException
      */
     public FunDataResult getProHeroPriority(int period, int region, int lowQuality, int highQuality) throws ClientException {
-        return this.clientOperation.get("/pro/hero/priority", makeProJson(period, region, lowQuality, highQuality));
+        return this.clientOperation.get("/pro/hero/priority", makeProParam(period, region, lowQuality, highQuality));
     }
 
     /**
@@ -139,7 +137,7 @@ public class FunDataProExector extends FunDataExector {
      * @throws ClientException
      */
     public FunDataResult getProHeroRoles(int period, int region, int lowQuality, int highQuality) throws ClientException {
-        return this.clientOperation.get("/pro/hero/roles", makeProJson(period, region, lowQuality, highQuality));
+        return this.clientOperation.get("/pro/hero/roles", makeProParam(period, region, lowQuality, highQuality));
     }
 
     /**
@@ -152,7 +150,7 @@ public class FunDataProExector extends FunDataExector {
      * @throws ClientException
      */
     public FunDataResult getProHeroLanes(int period, int region, int lowQuality, int highQuality) throws ClientException {
-        return this.clientOperation.get("/pro/hero/lanes", makeProJson(period, region, lowQuality, highQuality));
+        return this.clientOperation.get("/pro/hero/lanes", makeProParam(period, region, lowQuality, highQuality));
     }
 
     private Form makePageLimit(int page, int limit) {
