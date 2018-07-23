@@ -10,7 +10,7 @@ import com.fundata.varena.fundatajavasdk.domain.exception.ClientException;
 public class FunDataRawExector extends FunDataExector {
 
     public FunDataRawExector(String key, String secret) {
-        super(key, secret);
+        super(key, secret, "/data-service/dota2");
     }
 
     /**

@@ -14,8 +14,8 @@ import com.fundata.varena.fundatajavasdk.domain.http.Json;
 public class FunDataExector {
     protected HttpClientTemplate clientOperation;
 
-    public FunDataExector(String key, String secret) {
-        this.clientOperation = new HttpClientTemplate("api.varena.com", "/data-service/dota2", key, secret);
+    public FunDataExector(String key, String secret, String rootPath) {
+        this.clientOperation = new HttpClientTemplate("api.varena.com", rootPath, key, secret);
     }
 
     public FunDataResult commonForm(String url, Form form) throws ClientException {

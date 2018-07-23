@@ -14,7 +14,7 @@ import com.fundata.varena.fundatajavasdk.domain.http.Json;
 public class FunDataProExector extends FunDataExector {
 
     public FunDataProExector(String key, String secret) {
-        super(key, secret);
+        super(key, secret, "/data-service/dota2");
     }
 
     private Json makeProJson(int period, int region, int lowQuality, int highQuality) {

@@ -13,7 +13,7 @@ import com.fundata.varena.fundatajavasdk.domain.http.Json;
 public class FunDataPlayerExector extends FunDataExector {
 
     public FunDataPlayerExector(String key, String secret) {
-        super(key, secret);
+        super(key, secret, "/data-service/dota2");
     }
 
     private Json makeWeek(Long time) {

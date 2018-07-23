@@ -11,7 +11,7 @@ import com.fundata.varena.fundatajavasdk.domain.http.Json;
 public class FunDataMatchExector extends FunDataExector {
 
     public FunDataMatchExector(String key, String secret) {
-        super(key, secret);
+        super(key, secret, "/data-service/dota2");
     }
 
     /**

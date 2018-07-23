@@ -1,8 +1,11 @@
 package com.fundata.varena.fundatajavasdk.fundata;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.fundata.varena.fundatajavasdk.domain.entity.FunDataResult;
 import com.fundata.varena.fundatajavasdk.domain.exception.ClientException;
 import com.fundata.varena.fundatajavasdk.domain.http.Form;
+import com.fundata.varena.fundatajavasdk.domain.http.Json;
 
 /**
  * @author baoyl
@@ -11,17 +14,17 @@ import com.fundata.varena.fundatajavasdk.domain.http.Form;
 public class FunDataItemExector extends FunDataExector {
 
     public FunDataItemExector(String key, String secret) {
-        super(key, secret);
+        super(key, secret, "/data-service/dota2-data");
     }
 
-    private Form makeItemRankQuery(Integer period, Integer offset, Integer limit) {
-        return new Form().add("period", period)
-                .add("offset", offset)
-                .add("limit", limit);
+    private Json makeItemRankQuery(Integer period, Integer offset, Integer limit) {
+        return new Json().add("period", period)
+                .put("offset", offset)
+                .put("limit", limit);
     }
 
-    private Form makeItemHerosQuery(Integer itemId, Integer period, Integer offset, Integer limit) {
-        return makeItemRankQuery(period, offset, limit).add("item_id", itemId);
+    private Json makeItemHerosQuery(Integer itemId, Integer period, Integer offset, Integer limit) {
+        return makeItemRankQuery(period, offset, limit).put("item_id", itemId);
     }
 
     /**
