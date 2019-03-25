@@ -1,4 +1,4 @@
-package com.fundata.varena.fundatajavasdk.fundata.v1;
+package com.fundata.varena.fundatajavasdk.fundata.dota2.v1;
 
 import java.util.Calendar;
 
