@@ -16,10 +16,6 @@ public class CsgoLiveExector extends FunDataExector {
         super(key, secret, "/fundata-csgo-pro/v2/league/live");
     }
 
-    private Form makeScheduleForm(String scheduleId) {
-        return new Form().add("schedule_id", scheduleId);
-    }
-
     public FunDataResult getLiveScoreboard(String scheduleId) throws ClientException {
         return clientOperation.get("/scoreboard", makeScheduleForm(scheduleId));
     }
@@ -34,4 +30,5 @@ public class CsgoLiveExector extends FunDataExector {
                 .add("end_time", endTime.getTime() / 1000L);
         return clientOperation.get("/score", form);
     }
+
 }

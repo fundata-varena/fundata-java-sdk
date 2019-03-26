@@ -30,17 +30,17 @@ import com.google.gson.Gson;
 
 /**
  * fundata http请求操作
+ *
  * @author baoyl
  * @created 2018/5/9
  */
 public class HttpClientTemplate implements HttpClientOperation {
+    private static final String URL_START = "/";
     private String key;
     private String secret;
     private HttpClient client;
     private HttpHost host;
     private String rootPath;
-
-    private static final String URL_START = "/";
 
     HttpClientTemplate(String host, String rootPath, String key, String secret) {
         this.key = key;
@@ -167,4 +167,5 @@ public class HttpClientTemplate implements HttpClientOperation {
         }
         return FunDataResult.of(statusCode, "request error");
     }
+
 }

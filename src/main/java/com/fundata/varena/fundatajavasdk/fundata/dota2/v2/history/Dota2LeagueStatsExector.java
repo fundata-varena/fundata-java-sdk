@@ -15,7 +15,7 @@ public class Dota2LeagueStatsExector extends FunDataExector {
     }
 
     private Form makeLeagueStatsForm(int leagueId, Integer limit, Integer offset) {
-        Form form = new Form().add("league_id", leagueId);
+        Form form = makeLeagueForm(leagueId);
         if (limit == null || offset == null) {
             return form;
         } else {
@@ -41,10 +41,6 @@ public class Dota2LeagueStatsExector extends FunDataExector {
         return null;
     }
 
-    private Form makeMatchForm(int matchId) {
-        return new Form().add("match_id", matchId);
-    }
-
     public FunDataResult getTeamFightAnalysis(int matchId) throws ClientException {
         return clientOperation.get("/team-fight-analysis", makeMatchForm(matchId));
     }
@@ -64,4 +60,5 @@ public class Dota2LeagueStatsExector extends FunDataExector {
     public FunDataResult getTowerTracking(int matchId) throws ClientException {
         return clientOperation.get("/tower-tracking", makeMatchForm(matchId));
     }
+
 }

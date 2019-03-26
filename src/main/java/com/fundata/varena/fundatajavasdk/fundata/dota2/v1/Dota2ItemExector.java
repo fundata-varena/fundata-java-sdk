@@ -27,7 +27,8 @@ public class Dota2ItemExector extends FunDataExector {
 
     /**
      * /data-service/dota2/analysis/item/rank
-     * @param period  1: 7天，2: 30天
+     *
+     * @param period 1: 7天，2: 30天
      * @param offset
      * @param limit
      * @return FunDataResult
@@ -39,8 +40,9 @@ public class Dota2ItemExector extends FunDataExector {
 
     /**
      * /data-service/dota2/analysis/item/heroes
+     *
      * @param itemId 道具id
-     * @param period  1: 7天，2: 30天
+     * @param period 1: 7天，2: 30天
      * @param offset
      * @param limit
      * @return FunDataResult

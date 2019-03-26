@@ -18,15 +18,14 @@ public class CsgoScheduleExector extends FunDataExector {
     }
 
     public FunDataResult getScheduleList(Date startDate, int interval, int leagueId) throws ClientException {
-        Form form = new Form().add("start_date", startDate.getTime() / 1000L)
-                .add("interval", interval)
-                .add("league_id", leagueId);
+        Form form = makeLeagueForm(leagueId)
+                .add("start_date", startDate.getTime() / 1000L)
+                .add("interval", interval);
         return clientOperation.get("/list");
     }
 
     public FunDataResult getScheduleDetail(String scheduleId) throws ClientException {
-        Form form = new Form().add("schedule_id", scheduleId);
-        return clientOperation.get("/detail", form);
+        return clientOperation.get("/detail", makeScheduleForm(scheduleId));
     }
 
 }

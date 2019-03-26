@@ -8,6 +8,7 @@ import com.fundata.varena.fundatajavasdk.utils.FunDataUtils;
 
 /**
  * fundata dota2接口请求配置
+ *
  * @author baoyl
  * @created 2018/5/9
  */
@@ -35,4 +36,5 @@ public class FunDataRequestConfig implements RequsetConfig {
         request.setHeader("Accept-ApiTime", time);
         request.setHeader("Accept-ApiSign", sign);
     }
+
 }

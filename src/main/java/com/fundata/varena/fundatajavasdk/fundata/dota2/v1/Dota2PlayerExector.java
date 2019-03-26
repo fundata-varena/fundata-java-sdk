@@ -36,6 +36,7 @@ public class Dota2PlayerExector extends FunDataExector {
 
     /**
      * /data-service/dota2/analysis/player/{player_id}/heroes_combine_usage
+     *
      * @param playerId 玩家在 Dota2 上的账户ID
      * @return FunDataResult
      * @throws ClientException
@@ -46,6 +47,7 @@ public class Dota2PlayerExector extends FunDataExector {
 
     /**
      * /data-service/dota2/analysis/player/{player_id}/heroes_usage
+     *
      * @param playerId 玩家在 Dota2 上的账户ID
      * @return FunDataResult
      * @throws ClientException
@@ -56,6 +58,7 @@ public class Dota2PlayerExector extends FunDataExector {
 
     /**
      * /data-service/dota2/analysis/player/{player_id}/weekly_heroes_usage
+     *
      * @param playerId 玩家在 Dota2 上的账户ID
      * @return FunDataResult
      * @throws ClientException
@@ -66,6 +69,7 @@ public class Dota2PlayerExector extends FunDataExector {
 
     /**
      * /data-service/dota2/analysis/player/{player_id}/weekly_stats
+     *
      * @param playerId 玩家在 Dota2 上的账户ID
      * @return FunDataResult
      * @throws ClientException
@@ -76,6 +80,7 @@ public class Dota2PlayerExector extends FunDataExector {
 
     /**
      * /data-service/dota2/public/player/{player_id}/match_ids
+     *
      * @param playerId 玩家在 Dota2 上的账户ID
      * @return FunDataResult
      * @throws ClientException

@@ -16,6 +16,7 @@ public class Dota2RawExector extends FunDataExector {
 
     /**
      * /data-service/dota2/public/raw/heroes
+     *
      * @return FunDataResult
      * @throws ClientException
      */
@@ -25,6 +26,7 @@ public class Dota2RawExector extends FunDataExector {
 
     /**
      * /data-service/dota2/public/raw/items
+     *
      * @return FunDataResult
      * @throws ClientException
      */

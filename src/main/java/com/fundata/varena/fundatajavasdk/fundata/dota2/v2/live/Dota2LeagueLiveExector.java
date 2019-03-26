@@ -2,7 +2,6 @@ package com.fundata.varena.fundatajavasdk.fundata.dota2.v2.live;
 
 import com.fundata.varena.fundatajavasdk.domain.entity.FunDataResult;
 import com.fundata.varena.fundatajavasdk.domain.exception.ClientException;
-import com.fundata.varena.fundatajavasdk.domain.http.Form;
 import com.fundata.varena.fundatajavasdk.fundata.FunDataExector;
 
 /**
@@ -14,24 +13,20 @@ public class Dota2LeagueLiveExector extends FunDataExector {
         super(key, secret, "/fundata-dota2-pro/v2/league/live");
     }
 
-    private Form makeLiveMatchForm(int matchId) {
-        return new Form().add("match_id", matchId);
-    }
-
     public FunDataResult getLiveScoreboard(int matchId) throws ClientException {
-        return clientOperation.get("/scoreboard", makeLiveMatchForm(matchId));
+        return clientOperation.get("/scoreboard", makeMatchForm(matchId));
     }
 
     public FunDataResult getLivePlayer(int matchId) throws ClientException {
-        return clientOperation.get("/player", makeLiveMatchForm(matchId));
+        return clientOperation.get("/player", makeMatchForm(matchId));
     }
 
     public FunDataResult getLiveNetworth(int matchId) throws ClientException {
-        return clientOperation.get("/networth", makeLiveMatchForm(matchId));
+        return clientOperation.get("/networth", makeMatchForm(matchId));
     }
 
     public FunDataResult getLiveEvents(int matchId, int lastLogScore) throws ClientException {
-        return clientOperation.get("/events", makeLiveMatchForm(matchId)
+        return clientOperation.get("/events", makeMatchForm(matchId)
                 .add("last_log_score", lastLogScore));
     }
 

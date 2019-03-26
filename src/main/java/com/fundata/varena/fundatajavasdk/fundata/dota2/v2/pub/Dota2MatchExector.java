@@ -17,10 +17,6 @@ public class Dota2MatchExector extends FunDataExector {
         super(key, secret, "/fundata-dota2-free/v2/match");
     }
 
-    private Form makeMatchForm(int matchId) {
-        return new Form().add("match_id", matchId);
-    }
-
     public FunDataResult getMatchBasicInfo(int matchId) throws ClientException {
         return clientOperation.get("/basic-info", makeMatchForm(matchId));
     }
@@ -67,4 +63,5 @@ public class Dota2MatchExector extends FunDataExector {
     public FunDataResult batchMatchPlayersAbilityUpgrades(Date startTime, Date startFrom, int limit) throws ClientException {
         return clientOperation.get("/players-ability-upgrades/batch", makeMatchBatchForm(startTime, startFrom, limit));
     }
+
 }

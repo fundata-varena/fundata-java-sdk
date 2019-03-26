@@ -24,6 +24,7 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/player/{player_id}/hero-info
+     *
      * @param playerId 职业选手id
      * @return FunDataResult
      * @throws ClientException
@@ -34,6 +35,7 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/player/{player_id}/stats
+     *
      * @param playerId 职业选手id
      * @return FunDataResult
      * @throws ClientException
@@ -44,6 +46,7 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/team/{team_steam_id}/match-stats
+     *
      * @param teamSteamId 战队steamId
      * @return FunDataResult
      * @throws ClientException
@@ -58,6 +61,7 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/team/{team_steam_id}/hero-info
+     *
      * @param teamSteamId 战队steamId
      * @return FunDataResult
      * @throws ClientException
@@ -68,6 +72,7 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/team/{team_steam_id}/win-rate
+     *
      * @param teamSteamId 战队steamId
      * @return FunDataResult
      * @throws ClientException
@@ -78,6 +83,7 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/team/{team_steam_id}/match-stats
+     *
      * @param team1SteamId 战队1steamId
      * @param team2SteamId 战队2steamId
      * @return
@@ -89,9 +95,10 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/hero/overview
-     * @param period period=[integer, 0: all_time, 1: 7天, 2: 30天]
-     * @param region region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
-     * @param lowQuality low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
+     *
+     * @param period      period=[integer, 0: all_time, 1: 7天, 2: 30天]
+     * @param region      region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
+     * @param lowQuality  low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @param highQuality high_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @return FunDataResult
      * @throws ClientException
@@ -102,9 +109,10 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/hero/factions
-     * @param period period=[integer, 0: all_time, 1: 7天, 2: 30天]
-     * @param region region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
-     * @param lowQuality low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
+     *
+     * @param period      period=[integer, 0: all_time, 1: 7天, 2: 30天]
+     * @param region      region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
+     * @param lowQuality  low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @param highQuality high_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @return FunDataResult
      * @throws ClientException
@@ -116,9 +124,10 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/hero/priority
-     * @param period period=[integer, 0: all_time, 1: 7天, 2: 30天]
-     * @param region region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
-     * @param lowQuality low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
+     *
+     * @param period      period=[integer, 0: all_time, 1: 7天, 2: 30天]
+     * @param region      region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
+     * @param lowQuality  low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @param highQuality high_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @return FunDataResult
      * @throws ClientException
@@ -129,9 +138,10 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/hero/roles
-     * @param period period=[integer, 0: all_time, 1: 7天, 2: 30天]
-     * @param region region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
-     * @param lowQuality low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
+     *
+     * @param period      period=[integer, 0: all_time, 1: 7天, 2: 30天]
+     * @param region      region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
+     * @param lowQuality  low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @param highQuality high_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @return FunDataResult
      * @throws ClientException
@@ -142,9 +152,10 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/hero/lanes
-     * @param period period=[integer, 0: all_time, 1: 7天, 2: 30天]
-     * @param region region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
-     * @param lowQuality low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
+     *
+     * @param period      period=[integer, 0: all_time, 1: 7天, 2: 30天]
+     * @param region      region=[integer, 0: China, 1: CIS and Russia, 2: EU, 3: NA, 4: SA, 5: SEA, 6: Global(all)]
+     * @param lowQuality  low_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @param highQuality high_quality=[integer, 0: minor预选赛, 1: major预选赛, 2: minor, 3: major]
      * @return FunDataResult
      * @throws ClientException
@@ -159,6 +170,7 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/league/{league_id}/base-info
+     *
      * @param leagueId 联赛Id
      * @return FunDataResult
      * @throws ClientException
@@ -169,7 +181,8 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/league/ti/rank-player
-     * @param page page
+     *
+     * @param page  page
      * @param limit limit
      * @return FunDataResult
      * @throws ClientException
@@ -180,7 +193,8 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/league/ti/rank-team
-     * @param page page
+     *
+     * @param page  page
      * @param limit limit
      * @return FunDataResult
      * @throws ClientException
@@ -191,7 +205,8 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/league/list
-     * @param page page
+     *
+     * @param page  page
      * @param limit limit
      * @return FunDataResult
      * @throws ClientException
@@ -202,7 +217,8 @@ public class Dota2ProExector extends FunDataExector {
 
     /**
      * /data-service/dota2/pro/league/list
-     * @param page page
+     *
+     * @param page  page
      * @param limit limit
      * @return FunDataResult
      * @throws ClientException

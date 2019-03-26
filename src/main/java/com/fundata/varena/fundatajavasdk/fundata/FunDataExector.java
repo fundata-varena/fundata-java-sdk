@@ -12,10 +12,43 @@ import com.fundata.varena.fundatajavasdk.domain.http.Json;
  * @created 2018/5/10
  */
 public class FunDataExector {
+    /**
+     * 域名
+     */
+    private static final String VARENA_HOST = "api.varena.com";
     protected HttpClientTemplate clientOperation;
 
     public FunDataExector(String key, String secret, String rootPath) {
-        this.clientOperation = new HttpClientTemplate("api.varena.com", rootPath, key, secret);
+        this.clientOperation = new HttpClientTemplate(VARENA_HOST, rootPath, key, secret);
+    }
+
+    protected Form makeMatchForm(int matchId) {
+        return new Form().add("match_id", matchId);
+    }
+
+    protected Form makeMatchForm(String matchId) {
+        return new Form().add("match_id", matchId);
+    }
+
+    protected Form makeScheduleForm(String scheduleId) {
+        return new Form().add("schedule_id", scheduleId);
+    }
+
+    protected Form makePageByPageSize(int pageSize, int page) {
+        return new Form().add("page_size", pageSize)
+                .add("page", page);
+    }
+
+    protected Form makePageByLimit(int page, int limit) {
+        return new Form().add("page", page).add("limit", limit);
+    }
+
+    protected Form makeLeagueForm(int leagueId) {
+        return new Form().add("league_id", leagueId);
+    }
+
+    protected Form makePlayerForm(int playerId) {
+        return new Form().add("player_id", playerId);
     }
 
     public FunDataResult commonForm(String url, Form form) throws ClientException {
