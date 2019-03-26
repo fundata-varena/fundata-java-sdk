@@ -9,9 +9,9 @@ import com.fundata.varena.fundatajavasdk.fundata.FunDataExector;
  * @author baoyl
  * @created 2018/6/5
  */
-public class FunDataProExector extends FunDataExector {
+public class Dota2ProExector extends FunDataExector {
 
-    public FunDataProExector(String key, String secret) {
+    public Dota2ProExector(String key, String secret) {
         super(key, secret, "/data-service/dota2");
     }
 

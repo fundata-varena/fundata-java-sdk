@@ -9,9 +9,9 @@ import com.fundata.varena.fundatajavasdk.fundata.FunDataExector;
  * @author baoyl
  * @created 2019/3/25
  */
-public class FunDataLeagueExector extends FunDataExector {
+public class Dota2LeagueExector extends FunDataExector {
 
-    public FunDataLeagueExector(String key, String secret) {
+    public Dota2LeagueExector(String key, String secret) {
         super(key, secret, "/fundata-dota2-free/v2/league");
     }
 
