@@ -1,5 +1,6 @@
 package com.fundata.varena.fundatajavasdk.utils;
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 
@@ -38,8 +39,8 @@ public class FunDataUtils {
     public static String makeMd5(String code) {
         try {
             MessageDigest md5 = MessageDigest.getInstance("MD5");
-            byte[] md5bytes = md5.digest(code.getBytes("utf-8"));
-            StringBuffer sb = new StringBuffer();
+            byte[] md5bytes = md5.digest(code.getBytes(StandardCharsets.UTF_8));
+            StringBuilder sb = new StringBuilder();
             for (byte b : md5bytes) {
                 String temp = Integer.toHexString(b & 0xff);
                 if (temp.length() == 1) {

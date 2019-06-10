@@ -14,6 +14,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 import com.fundata.varena.fundatajavasdk.domain.BaseBean;
+import com.google.common.collect.Lists;
 
 /**
  * http 表单
@@ -23,8 +24,9 @@ import com.fundata.varena.fundatajavasdk.domain.BaseBean;
 public class Form extends BaseBean implements Iterable<BasicNameValuePair> {
     private static final long serialVersionUID = -8522258723892506895L;
     /** 参数集合 */
-    private List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
+    private List<BasicNameValuePair> params = Lists.newArrayList();
 
+    @Override
     public Iterator<BasicNameValuePair> iterator() {
         return params.iterator();
     }
@@ -98,13 +100,15 @@ public class Form extends BaseBean implements Iterable<BasicNameValuePair> {
     }
 
     public List<NameValuePair> values2NVP() {
-        List<NameValuePair> result = new ArrayList<NameValuePair>();
+        List<NameValuePair> result = Lists.newArrayList();
         for (final BasicNameValuePair param : params) {
             result.add(new NameValuePair() {
+                @Override
                 public String getName() {
                     return param.getName();
                 }
 
+                @Override
                 public String getValue() {
                     return param.getValue();
                 }
@@ -120,12 +124,8 @@ public class Form extends BaseBean implements Iterable<BasicNameValuePair> {
     }
 
     public String merge() {
-        Collections.sort(params, new Comparator<BasicNameValuePair>() {
-            public int compare(BasicNameValuePair o1, BasicNameValuePair o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
-        List<String> merges = new ArrayList<String>();
+        params.sort(Comparator.comparing(BasicNameValuePair::getName));
+        List<String> merges = Lists.newArrayList();
         for (BasicNameValuePair param : params) {
             merges.add(param.getName() + "=" + param.getValue());
         }
